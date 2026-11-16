@@ -1,0 +1,5 @@
+SHOW DATABASES;
+USE st0263_stocks_db;
+SHOW TABLES;
+DESCRIBE FORMATTED stocks_enriched;
+SHOW PARTITIONS stocks_enriched;
