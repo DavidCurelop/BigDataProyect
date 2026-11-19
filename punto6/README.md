@@ -1,4 +1,4 @@
-# SQLScripts — US 4.1 Descriptive SQL Analytics (Punto 6)
+# Punto 6 – Descriptive SQL Analytics: Athena, EMR Hive/Hue & SparkSQL (US 4.1)
 
 SQL queries answering the 5 business questions over `stocks_db.stocks_enriched` across **Amazon Athena**, **EMR Hive / Hue**, and **SparkSQL**.
 
@@ -18,22 +18,22 @@ Upload to S3 (so scripts persist even if the EMR cluster is terminated/cloned) o
 
 ```powershell
 # Optional: persist in S3
-aws s3 sync .\SQLScripts s3://stock-big-data-bucket/scripts/SQLScripts/
+aws s3 sync .\punto6 s3://stock-big-data-bucket/scripts/punto6/
 
 # Copy to EMR primary node
-scp -i .\labsuser.pem -r .\SQLScripts hadoop@<EMR_PRIMARY_PUBLIC_DNS>:~/SQLScripts
+scp -i .\labsuser.pem -r .\punto6 hadoop@<EMR_PRIMARY_PUBLIC_DNS>:~/punto6
 ssh -i .\labsuser.pem hadoop@<EMR_PRIMARY_PUBLIC_DNS>
 ```
 
 On the EMR primary node:
 ```bash
 # Hive CLI
-hive -f ~/SQLScripts/emr/run_all_emr.sql | tee ~/hive_punto6.log
+hive -f ~/punto6/emr/run_all_emr.sql | tee ~/hive_punto6.log
 
 # SparkSQL CLI (with Glue Data Catalog)
 spark-sql \
   --conf spark.hadoop.hive.metastore.client.factory.class=com.amazonaws.glue.catalog.metastore.AWSGlueDataCatalogHiveClientFactory \
-  -f ~/SQLScripts/emr/run_all_emr.sql | tee ~/sparksql_punto6.log
+  -f ~/punto6/emr/run_all_emr.sql | tee ~/sparksql_punto6.log
 ```
 
 In **Hue**, open **Query → Editor → Hive** (and **Spark** if enabled), select `stocks_db`, and paste/run each `emr/q*.sql` file individually.

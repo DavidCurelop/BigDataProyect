@@ -7,7 +7,7 @@
 ## Files
 - `api.py`: FastAPI (`:8000`) reading `s3://stock-big-data-bucket/refined/analytics_results/` Parquet via `boto3`.
 - `dashboard.py`: Streamlit (`:8501`) consuming `API_BASE_URL` (local `:8000` or Amazon API Gateway `prod` HTTPS URL).
-- `athena_matplotlib_charts.ipynb`: Executes `SQLScripts/athena/q1..q5` via `boto3` Athena and exports `chart_q1..q5_*.png`.
+- `athena_matplotlib_charts.ipynb`: Executes `punto6/athena/q1..q5` via `boto3` Athena and exports `chart_q1..q5_*.png`.
 - `test_punto8.py`: Unit tests for API serialization (`NaN` -> `null`, dates) and Streamlit `fetch_api`.
 
 ## Static Matplotlib Charts (Athena SQL)
