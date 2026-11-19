@@ -12,12 +12,10 @@ End-to-end AWS Data Lakehouse (`us-east-1`, S3 bucket `stock-big-data-bucket`, G
 
 ## I. Integrantes del proyecto
 
-- `<<nombre, email-eafit>>`
-- `<<nombre, email-eafit>>`
-- `<<nombre, email-eafit>>`
+- David Curelop 
+- Moises Vergara
 
 - **Repositorio GitHub:** `https://github.com/DavidCurelop/BigDataProyect`
-- **Entrega en OneDrive (Office365 EAFIT):** Compartir documento de evidencias a `aeospinas@eafit.edu.co`
 
 ---
 
